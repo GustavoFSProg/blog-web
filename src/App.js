@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import api from './services/api'
 import { format } from 'date-fns'
-import { useParams } from 'react-router-dom'
 
 function App() {
   const [post, setPosts] = useState([])
@@ -13,32 +12,12 @@ function App() {
   async function handlePosts() {
     const { data } = await api.get(`/`)
 
-    // console.log(data)
-
     setPosts(data)
   }
 
   useEffect(() => {
     handlePosts()
   }, [])
-
-  console.log(`POST: ${post}`)
-
-  function dataAtualFormatada(date) {
-    var data = date,
-      dia = data.getDate().toString(),
-      diaF = dia.length == 1 ? '0' + dia : dia,
-      mes = (data.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro começa com zero.
-      mesF = mes.length == 1 ? '0' + mes : mes,
-      anoF = data.getFullYear()
-    return diaF + '/' + mesF + '/' + anoF
-  }
-
-  function MyDate(date) {
-    const newYears = date
-    const formattedDate = format(newYears, 'MM/DD/YYYY')
-    return formattedDate
-  }
 
   return (
     <div
