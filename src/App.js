@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Container, UlLista } from './styled-app'
 import api from './services/api'
 
 function App() {
@@ -19,26 +20,11 @@ function App() {
   }, [])
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        flex: '1',
-      }}
-    >
+    <Container>
       {post.map((item) => {
         return (
           <div>
-            <ul
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flex: '1',
-              }}
-              key={item.id}
-            >
+            <UlLista key={item.id}>
               <br />
               <br />
               <br />
@@ -123,15 +109,14 @@ function App() {
                   marginLeft: '280px',
                 }}
               >
-                {/* Data: {dataAtualFormatada(item.createdAt)} */}
                 Data: {getDateWithoutTime(item.createdAt)}
               </li>
               <br />
-            </ul>
+            </UlLista>
           </div>
         )
       })}
-    </div>
+    </Container>
   )
 }
 
