@@ -78,7 +78,11 @@ function App() {
               <br />
 
               <a href="F">
-                <img width="450" src={`http://localhost:8000/files/${item.image}`} alt="imagem" />
+                <img
+                  width="450"
+                  src={`https://blog-api-sqlite.herokuapp.com/files/${item.image}`}
+                  alt="imagem"
+                />
               </a>
               <br />
 
