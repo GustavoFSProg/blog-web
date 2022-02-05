@@ -55,13 +55,11 @@ function App() {
               </li>
               <br />
 
-              <a href="F">
-                <img
-                  width="450"
-                  src={`https://blog-api-sqlite.herokuapp.com/files/${item.image}`}
-                  alt="imagem"
-                />
-              </a>
+              <img
+                width="450"
+                src={`https://blog-api-sqlite.herokuapp.com/files/${item.image}`}
+                alt="imagem"
+              />
               <br />
 
               <li style={{ width: '50%', listStyle: 'none' }}>
