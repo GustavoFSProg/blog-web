@@ -5,6 +5,10 @@ import api from './services/api'
 function App() {
   const [post, setPosts] = useState([])
 
+  function getIdForLocalStorage(id) {
+    localStorage.setItem('ID', id)
+  }
+
   function getDateWithoutTime(date) {
     return require('moment')(date).format('DD-MM-YYYY')
   }
@@ -17,6 +21,12 @@ function App() {
 
   async function handleLikes(id) {
     await api.put(`/likes/${id}`)
+
+    handlePosts()
+  }
+
+  async function handleViews(id) {
+    await api.put(`/views/${id}`)
 
     handlePosts()
   }
@@ -87,6 +97,9 @@ function App() {
                 <br />
                 <br />
                 <Button onClick={() => handleLikes(item.id)}>LIKE</Button>
+                <br />
+                <br />
+                <Button onClick={() => handleViews(item.id)}>Views</Button>
               </li>
               <br />
 
