@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Container, UlLista } from './styled-app'
 import api from './services/api'
-import { useHistory } from 'react-router-dom'
 
 function App() {
   const [post, setPosts] = useState([])
