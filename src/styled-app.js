@@ -15,9 +15,11 @@ export const UlLista = styled.ul`
 
 export const Button = styled.button`
   width: 60px;
-  background: lightblue;
+  background: #cce6ff;
   color: black;
   height: 30px;
   border-radius: 7px;
   font-weight: bold;
+  border: 0;
+  cursor: pointer;
 `
