@@ -18,7 +18,7 @@ function App() {
   async function handleLikes(id) {
     await api.put(`/likes/${id}`)
 
-    alert('Liked!!')
+    handlePosts()
   }
 
   useEffect(() => {
