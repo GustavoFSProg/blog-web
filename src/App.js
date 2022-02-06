@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Container, UlLista } from './styled-app'
+import { Container, Button, UlLista } from './styled-app'
 import api from './services/api'
 
 function App() {
@@ -86,7 +86,7 @@ function App() {
                 Likes: {item.likes}
                 <br />
                 <br />
-                <button onClick={() => handleLikes(item.id)}>LIKE</button>
+                <Button onClick={() => handleLikes(item.id)}>LIKE</Button>
               </li>
               <br />
 

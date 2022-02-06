@@ -12,3 +12,12 @@ export const UlLista = styled.ul`
   justify-content: center;
   flex: 1;
 `
+
+export const Button = styled.button`
+  width: 60px;
+  background: lightblue;
+  color: black;
+  height: 30px;
+  border-radius: 7px;
+  font-weight: bold;
+`
