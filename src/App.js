@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Container, UlLista } from './styled-app'
 import api from './services/api'
+import { useHistory } from 'react-router-dom'
 
 function App() {
   const [post, setPosts] = useState([])
@@ -13,6 +14,12 @@ function App() {
     const { data } = await api.get(`/`)
 
     setPosts(data)
+  }
+
+  async function handleLikes(id) {
+    await api.put(`/likes/${id}`)
+
+    alert('Liked!!')
   }
 
   useEffect(() => {
@@ -78,6 +85,9 @@ function App() {
                 }}
               >
                 Likes: {item.likes}
+                <br />
+                <br />
+                <button onClick={() => handleLikes(item.id)}>LIKE</button>
               </li>
               <br />
 
@@ -94,9 +104,6 @@ function App() {
               >
                 Views: {item.views}
               </li>
-              <br />
-              <br />
-              <br />
 
               <li
                 style={{
