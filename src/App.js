@@ -70,8 +70,7 @@ function App() {
 
               <li style={{ width: '50%', listStyle: 'none' }}>
                 {' '}
-                <a
-                  href="https://google.com"
+                <Link
                   style={{
                     fontFamily: 'Roboto',
                     fontWeight: 'none',
@@ -79,9 +78,11 @@ function App() {
                     color: 'darkblue',
                     fontSize: '17px',
                   }}
+                  onClick={() => handleViews(item.id)}
+                  to="/profile"
                 >
                   <p style={{ textIndent: '30px' }}>{item.text} </p>
-                </a>
+                </Link>
               </li>
 
               <br />
