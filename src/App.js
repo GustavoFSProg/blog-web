@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Container, Button, UlLista } from './styled-app'
 import api from './services/api'
+import { Link } from 'react-router-dom'
+import Header from './Header'
 
 function App() {
   const [post, setPosts] = useState([])
@@ -28,7 +30,9 @@ function App() {
   async function handleViews(id) {
     await api.put(`/views/${id}`)
 
-    handlePosts()
+    localStorage.setItem('ViewsID', id)
+
+    // handlePosts()
   }
 
   useEffect(() => {
@@ -37,6 +41,11 @@ function App() {
 
   return (
     <Container>
+      <Header />
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <h1>Home</h1>
+      </div>
+
       {post.map((item) => {
         return (
           <div>
@@ -56,12 +65,13 @@ function App() {
                 </div>
               </li>
               <br />
-
-              <img
-                width="450"
-                src={`https://blog-api-sqlite.herokuapp.com/files/${item.image}`}
-                alt="imagem"
-              />
+              <Link onClick={() => handleViews(item.id)} to="/profile">
+                <img
+                  width="450"
+                  src={`https://blog-api-sqlite.herokuapp.com/files/${item.image}`}
+                  alt="imagem"
+                />
+              </Link>
               <br />
 
               <li style={{ width: '50%', listStyle: 'none' }}>
@@ -99,7 +109,6 @@ function App() {
                 <Button onClick={() => handleLikes(item.id)}>LIKE</Button>
                 <br />
                 <br />
-                <Button onClick={() => handleViews(item.id)}>Views</Button>
               </li>
               <br />
 
