@@ -30,7 +30,7 @@ function Profile() {
   useEffect(() => {
     getOneProducts()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [productsList])
 
   return (
     <Container>
