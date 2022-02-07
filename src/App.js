@@ -7,10 +7,6 @@ import Header from './Header'
 function App() {
   const [post, setPosts] = useState([])
 
-  function getIdForLocalStorage(id) {
-    localStorage.setItem('ID', id)
-  }
-
   function getDateWithoutTime(date) {
     return require('moment')(date).format('DD-MM-YYYY')
   }
@@ -31,8 +27,6 @@ function App() {
     await api.put(`/views/${id}`)
 
     localStorage.setItem('ViewsID', id)
-
-    // handlePosts()
   }
 
   useEffect(() => {

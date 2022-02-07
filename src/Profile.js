@@ -5,21 +5,12 @@ import Header from './Header'
 
 function Profile() {
   const [productsList, setProductsList] = useState([])
-  const [post, setPosts] = useState([])
 
   function getDateWithoutTime(date) {
     return require('moment')(date).format('DD-MM-YYYY')
   }
 
   const id = localStorage.getItem('ViewsID')
-  async function handlePosts() {
-    console.log(`Id: ${id}`)
-    const data = await api.get(`/id/${id}`)
-
-    setPosts(data)
-
-    return data
-  }
 
   async function getOneProducts() {
     const { data } = await api.get(`/id/${id}`)
