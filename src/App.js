@@ -81,7 +81,7 @@ function App() {
                   onClick={() => handleViews(item.id)}
                   to="/profile"
                 >
-                  <p style={{ textIndent: '30px' }}>{item.text} </p>
+                  <p style={{ textIndent: '30px' }}>Descricao: {item.description} </p>
                 </Link>
               </li>
 
