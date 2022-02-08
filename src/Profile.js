@@ -4,7 +4,7 @@ import api from './services/api'
 import Header from './Header'
 
 function Profile() {
-  const [productsList, setProductsList] = useState([])
+  const [productsList, setProductsList] = useState({})
 
   function getDateWithoutTime(date) {
     return require('moment')(date).format('DD-MM-YYYY')

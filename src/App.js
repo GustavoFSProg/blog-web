@@ -12,7 +12,7 @@ function App() {
   }
 
   async function handlePosts() {
-    const { data } = await api.get(`/`)
+    const { data } = await api.get(`/pegar`)
 
     setPosts(data)
   }
