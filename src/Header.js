@@ -27,6 +27,18 @@ function Header() {
       >
         Profile
       </Link>
+
+      <Link
+        to="/register"
+        style={{
+          marginRight: '20px',
+          textDecoration: 'none',
+          color: 'darkblue',
+          fontSize: '18px',
+        }}
+      >
+        Cadastro
+      </Link>
     </div>
   )
 }
