@@ -40,8 +40,6 @@ function Register() {
 
       await api.post('/register', data)
 
-      // alert('Entrou no Register...  mas saiu kkkk!!')
-
       alert('Cadastro realizado com sucesso!')
 
       return history.push('/')
@@ -70,15 +68,9 @@ function Register() {
                   onChange={(e) => setImage(e.target.files[0])}
                 />
                 <Label>Titulo do Post: </Label>
-                <Input
-                  // placeholder="Digite o Nome do Produto"
-                  id="title"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                />
+                <Input id="title" value={title} onChange={(e) => setTitle(e.target.value)} />
                 <Label>Descrição: </Label>
                 <Input
-                  // placeholder="Digite o Preço do Produto"
                   id="description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
@@ -87,7 +79,6 @@ function Register() {
                 <textarea
                   rows="22"
                   cols="52"
-                  // placeholder="Digite o Preço do Produto"
                   id="text"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
@@ -95,12 +86,7 @@ function Register() {
                 <br />
 
                 <Label>Autor: </Label>
-                <Input
-                  // placeholder="Digite o Nome do Produto"
-                  id="autor"
-                  value={autor}
-                  onChange={(e) => setAutor(e.target.value)}
-                />
+                <Input id="autor" value={autor} onChange={(e) => setAutor(e.target.value)} />
 
                 <Button className="confirm-Button" type="submit">
                   Cadastrar
