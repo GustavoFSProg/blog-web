@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Container, Button, UlLista } from './styled-app'
 import api from './services/api'
 import Header from './Header'
