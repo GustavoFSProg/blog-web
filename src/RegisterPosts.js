@@ -15,8 +15,8 @@ import {
 
 function Register() {
   const [title, setTitle] = useState('')
-  const [likes, setLikes] = useState(0)
-  const [views, setViews] = useState(0)
+  const [likes] = useState(0)
+  const [views] = useState(0)
   const [autor, setAutor] = useState('')
   const [description, setDescription] = useState('')
   const [text, setText] = useState('')
