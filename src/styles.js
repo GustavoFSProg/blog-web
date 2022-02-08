@@ -72,9 +72,11 @@ export const InputFile = styled.input`
 export const Button = styled.button`
   width: 50%;
   height: 30px;
+  cursor: pointer;
   background: #b3daff;
   border: 1px solid #80c1ff;
   border-radius: 10px;
   color: #004f99;
   margin-bottom: 40px;
+  display: none;
 `

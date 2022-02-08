@@ -4,7 +4,7 @@ import api from './services/api'
 import Header from './Header'
 
 function Profile() {
-  const [productsList, setProductsList] = useState({})
+  const [productsList, setProductsList] = useState([])
 
   function getDateWithoutTime(date) {
     return require('moment')(date).format('DD-MM-YYYY')
@@ -14,7 +14,6 @@ function Profile() {
 
   async function getOneProducts() {
     const { data } = await api.get(`/id/${id}`)
-    console.log(`data: ${data}`)
 
     setProductsList(data)
 
@@ -27,10 +26,7 @@ function Profile() {
     getOneProducts()
   }
 
-  useEffect(() => {
-    getOneProducts()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [productsList])
+  getOneProducts()
 
   return (
     <Container>
@@ -40,8 +36,6 @@ function Profile() {
         <h1>Profile</h1>
       </div>
 
-      {/* {post.map((item) => { */}
-      {/* return ( */}
       <div key={productsList.id}>
         <UlLista>
           <br />
@@ -134,8 +128,6 @@ function Profile() {
           <br />
         </UlLista>
       </div>
-      {/* ) */}
-      {/* })} */}
     </Container>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-// import api from './services/api'
+import api from './services/api'
 import Header from './Header'
 import {
   Container,
@@ -38,11 +38,11 @@ function Register() {
       data.append('views', views)
       data.append('image', image)
 
-      //   await api.post('/register', data)
+      await api.post('/register', data)
 
-      alert('Entrou no Register...  mas saiu kkkk!!')
+      // alert('Entrou no Register...  mas saiu kkkk!!')
 
-      //   alert('Cadastro realizado com sucesso!')
+      alert('Cadastro realizado com sucesso!')
 
       return history.push('/')
     } catch (error) {
