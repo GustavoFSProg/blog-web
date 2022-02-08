@@ -38,9 +38,12 @@ function Register() {
       data.append('views', views)
       data.append('image', image)
 
-      await api.post('/register', data)
+      //   await api.post('/register', data)
 
-      alert('Cadastro realizado com sucesso!')
+      alert('Entrou no Register...  mas saiu kkkk!!')
+
+      //   alert('Cadastro realizado com sucesso!')
+
       return history.push('/')
     } catch (error) {
       console.log(error)
