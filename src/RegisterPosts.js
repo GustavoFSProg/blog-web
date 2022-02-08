@@ -99,19 +99,6 @@ function Register() {
                   onChange={(e) => setAutor(e.target.value)}
                 />
 
-                <Input
-                  // placeholder="Digite o Nome do Produto"
-                  id="likes"
-                  value={likes}
-                  onChange={(e) => setLikes(e.target.value)}
-                />
-
-                <Input
-                  // placeholder="Digite o Nome do Produto"
-                  id="views"
-                  value={views}
-                  onChange={(e) => setViews(e.target.value)}
-                />
                 <Button className="confirm-Button" type="submit">
                   Cadastrar
                 </Button>
