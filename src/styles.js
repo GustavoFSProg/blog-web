@@ -78,5 +78,5 @@ export const Button = styled.button`
   border-radius: 10px;
   color: #004f99;
   margin-bottom: 40px;
-  display: none;
+  /* display: none; */
 `

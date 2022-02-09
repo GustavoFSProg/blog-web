@@ -53,11 +53,7 @@ function Profile() {
             </div>
           </li>
           <br />
-          <img
-            width="450"
-            src={`https://blog-api-sqlite.herokuapp.com/files/${productsList.image}`}
-            alt="imagem"
-          />
+          <img width="450" src={productsList.image} alt="imagem" />
           <br />
 
           <li style={{ width: '50%', listStyle: 'none' }}>

@@ -60,11 +60,7 @@ function App() {
               </li>
               <br />
               <Link onClick={() => handleViews(item.id)} to="/profile">
-                <img
-                  width="450"
-                  src={`https://blog-api-sqlite.herokuapp.com/files/${item.image}`}
-                  alt="imagem"
-                />
+                <img width="450" src={item.image} alt="imagem" />
               </Link>
               <br />
 
