@@ -12,7 +12,7 @@ import {
   Button,
 } from './styles'
 
-function Register() {
+function RegisterPosts() {
   const [title, setTitle] = useState('')
   const [likes] = useState(0)
   const [views] = useState(0)
@@ -37,7 +37,7 @@ function Register() {
 
       await api.post('/register', data)
 
-      alert('Cadastro realizado com sucesso!')
+      return alert('Cadastro realizado com sucesso!')
     } catch (error) {
       console.log(error)
       return alert(`Deu erro no front ${error}`)
@@ -95,4 +95,4 @@ function Register() {
   )
 }
 
-export default Register
+export default RegisterPosts
