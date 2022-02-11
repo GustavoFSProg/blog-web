@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router'
 import api from './services/api'
 import Header from './Header'
 import {
@@ -21,6 +22,8 @@ function Register() {
   const [text, setText] = useState('')
   const [image, setImage] = useState([])
 
+  const history = useHistory()
+
   async function handleSubmit(event) {
     event.preventDefault()
 
@@ -39,7 +42,7 @@ function Register() {
 
       alert('Cadastro realizado com sucesso!')
 
-      // return history.push('/')
+      return history.push('/')
     } catch (error) {
       console.log(error)
       return alert(`Deu erro no front ${error}`)

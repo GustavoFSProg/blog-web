@@ -12,7 +12,7 @@ import {
 } from './styles'
 
 function Login() {
-  const [email, setEmail] = useState('carla@gmail.com')
+  const [email, setEmail] = useState('barbara@gmail.com')
   const [password, setPassword] = useState('pepecao1234')
 
   async function handleSubmit(event) {
@@ -20,15 +20,13 @@ function Login() {
 
     try {
       console.log({ email, password })
-      const { token } = await api.post('/user/login/admin', { email, password })
+      const { token } = await api.post('/login', { email, password })
 
       console.log(token)
 
       return alert('Login  realizado com sucesso!')
-
-      // return history.push('/register')
     } catch (error) {
-      return alert(`Deu erro no front ${error}`)
+      return alert(`Deu erro no front do no Login ${error}`)
     }
   }
 
