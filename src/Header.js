@@ -29,18 +29,6 @@ function Header() {
       </Link>
 
       <Link
-        to="/register-posts"
-        style={{
-          marginRight: '20px',
-          textDecoration: 'none',
-          color: 'darkblue',
-          fontSize: '18px',
-        }}
-      >
-        Cadastro
-      </Link>
-
-      <Link
         to="/login"
         style={{
           marginRight: '20px',
