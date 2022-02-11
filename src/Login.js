@@ -13,7 +13,7 @@ import {
 } from './styles'
 
 function Login() {
-  const [email, setEmail] = useState('barbara@gmail.com')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const history = useHistory()
