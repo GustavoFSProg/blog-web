@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import api from './services/api'
+import { useHistory } from 'react-router-dom'
 import Header from './Header'
 import {
   Container,
@@ -15,6 +16,8 @@ function Login() {
   const [email, setEmail] = useState('barbara@gmail.com')
   const [password, setPassword] = useState('pepecao1234')
 
+  const history = useHistory()
+
   async function handleSubmit(event) {
     event.preventDefault()
 
@@ -23,6 +26,8 @@ function Login() {
       const { token } = await api.post('/login', { email, password })
 
       console.log(token)
+
+      history.push('/register-posts')
 
       return alert('Login  realizado com sucesso!')
     } catch (error) {
