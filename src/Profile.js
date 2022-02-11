@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Container, Button, UlLista } from './styled-app'
 import api from './services/api'
 import Header from './Header'
 
 function Profile() {
   const [productsList, setProductsList] = useState([])
+  const [comments, setComments] = useState([])
 
   function getDateWithoutTime(date) {
     return require('moment')(date).format('DD-MM-YYYY')
@@ -26,7 +27,21 @@ function Profile() {
     getOneProducts()
   }
 
-  getOneProducts()
+  async function getComments() {
+    const id = localStorage.getItem('ViewsID')
+
+    console.log(`ID: ${id}`)
+
+    const { data } = await api.get(`/get/coments/${id}`)
+
+    console.log(`Data: ${data}`)
+    setComments(data)
+  }
+
+  useEffect(() => {
+    getComments()
+    getOneProducts()
+  }, [])
 
   return (
     <Container>
@@ -122,6 +137,60 @@ function Profile() {
             Data: {getDateWithoutTime(productsList.createdAt)}
           </li>
           <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <div style={{ marginLeft: '-70px', width: '410px' }}>
+            {comments.map((item) => {
+              return (
+                <div
+                  style={{
+                    display: 'flex',
+                    width: '250%',
+                    marginLeft: '-80px',
+                    marginBottom: '15px',
+                  }}
+                >
+                  <ul
+                    key={item._id}
+                    style={{
+                      listStyle: 'none',
+                      display: 'flex',
+                      background: '#e6e6e6',
+                      height: '100px',
+                      minWidth: '500px',
+                      width: '600px',
+                      paddingTop: '16px',
+                      marginLeft: '2px',
+                      borderRadius: '10px',
+
+                      // flexDirection: 'row',
+                      // alignItems: 'center',
+                    }}
+                  >
+                    <img
+                      width="70"
+                      height="70"
+                      style={{ marginLeft: '-20px' }}
+                      src={productsList.image}
+                      alt="imagem"
+                    />
+                    <li style={{ marginLeft: '20px', marginTop: '5px', width: '120px' }}>
+                      <strong>{item.user_name}</strong>
+                    </li>
+                    <br />
+                    <br />
+
+                    <li style={{ marginTop: '5px', marginLeft: '-40px', width: '520px' }}>
+                      <br />
+                      {item.comments}
+                    </li>
+                  </ul>
+                </div>
+              )
+            })}
+          </div>
         </UlLista>
       </div>
     </Container>

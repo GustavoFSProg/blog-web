@@ -29,7 +29,7 @@ function Header() {
       </Link>
 
       <Link
-        to="/register"
+        to="/login"
         style={{
           marginRight: '20px',
           textDecoration: 'none',
@@ -37,7 +37,7 @@ function Header() {
           fontSize: '18px',
         }}
       >
-        Cadastro
+        Login
       </Link>
     </div>
   )
