@@ -14,7 +14,7 @@ import {
 
 function Login() {
   const [email, setEmail] = useState('barbara@gmail.com')
-  const [password, setPassword] = useState('pepecao1234')
+  const [password, setPassword] = useState('')
 
   const history = useHistory()
 
