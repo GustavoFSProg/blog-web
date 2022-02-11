@@ -41,7 +41,7 @@ function Profile() {
   useEffect(() => {
     getComments()
     getOneProducts()
-  }, [])
+  })
 
   return (
     <Container>
@@ -164,9 +164,6 @@ function Profile() {
                       paddingTop: '16px',
                       marginLeft: '2px',
                       borderRadius: '10px',
-
-                      // flexDirection: 'row',
-                      // alignItems: 'center',
                     }}
                   >
                     <img

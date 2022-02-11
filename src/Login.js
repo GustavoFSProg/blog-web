@@ -16,8 +16,6 @@ function Login() {
   const [email, setEmail] = useState('carla@gmail.com')
   const [password, setPassword] = useState('pepecao1234')
 
-  const history = useHistory()
-
   async function handleSubmit(event) {
     event.preventDefault()
 
