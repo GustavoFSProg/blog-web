@@ -64,7 +64,7 @@ function Profile() {
   useEffect(() => {
     getOneProducts()
     getComments()
-  }, [productsList])
+  }, [getOneProducts])
 
   return (
     <Container>
