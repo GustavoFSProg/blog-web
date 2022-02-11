@@ -42,7 +42,7 @@ function Register() {
 
       alert('Cadastro realizado com sucesso!')
 
-      return history.push('/')
+      // return history.push('/')
     } catch (error) {
       console.log(error)
       return alert(`Deu erro no front ${error}`)
