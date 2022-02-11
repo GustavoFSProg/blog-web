@@ -62,6 +62,7 @@ function Profile() {
   }
 
   getOneProducts()
+
   useEffect(() => {
     getComments()
   }, [])
@@ -212,25 +213,59 @@ function Profile() {
             })}
           </div>
         </UlLista>
-        <form onSubmit={handleComents}>
-          <label>Autor:</label>
-          <input
-            type="text"
-            name="autor"
-            value={user_name}
-            onChange={(e) => setUser_name(e.target.value)}
-          />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <form
+            onSubmit={handleComents}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              width: '700px',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: '#ccebff',
+            }}
+          >
+            <br />
 
-          <label>Comentario:</label>
-          <input
-            type="text"
-            name="comentario"
-            value={comments}
-            onChange={(e) => setComments(e.target.value)}
-          />
+            <label>Autor:</label>
+            <input
+              type="text"
+              name="autor"
+              value={user_name}
+              onChange={(e) => setUser_name(e.target.value)}
+              style={{ width: '400px' }}
+            />
+            <br />
 
-          <button type="submit"> Enviar</button>
-        </form>
+            <label>Comentario:</label>
+            <textarea
+              type="text"
+              name="comentario"
+              value={comments}
+              onChange={(e) => setComments(e.target.value)}
+              cols="60"
+              rows="12"
+            ></textarea>
+            <br />
+            <br />
+
+            <button
+              type="submit"
+              style={{
+                width: '160px',
+                height: '30px',
+                background: 'lightgreen',
+                borderRadius: '15',
+              }}
+            >
+              {' '}
+              Enviar
+            </button>
+            <br />
+            <br />
+            <br />
+          </form>
+        </div>
       </div>
     </Container>
   )
