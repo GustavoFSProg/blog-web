@@ -61,10 +61,10 @@ function Profile() {
     setComentarios(data)
   }
 
+  getOneProducts()
   useEffect(() => {
-    getOneProducts()
     getComments()
-  }, [getOneProducts])
+  }, [])
 
   return (
     <Container>
