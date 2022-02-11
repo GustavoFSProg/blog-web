@@ -2,13 +2,36 @@ import { useEffect, useState } from 'react'
 import { Container, Button, UlLista } from './styled-app'
 import api from './services/api'
 import Header from './Header'
+import { useHistory } from 'react-router-dom'
 
 function Profile() {
   const [productsList, setProductsList] = useState([])
-  const [comments, setComments] = useState([])
+  const [comentarios, setComentarios] = useState([])
+  const [user_name, setUser_name] = useState('')
+  const [comments, setComments] = useState('')
+
+  const history = useHistory()
 
   function getDateWithoutTime(date) {
     return require('moment')(date).format('DD-MM-YYYY')
+  }
+
+  async function handleComents(e) {
+    e.preventDefault()
+
+    try {
+      const id = localStorage.getItem('ViewsID')
+
+      const data = { user_name, comments }
+
+      await api.post(`/comments-register/${id}`, data)
+
+      history.push('/profile')
+
+      return alert('Comentario enviado!!')
+    } catch (error) {
+      return alert('ERRO!!', error)
+    }
   }
 
   const id = localStorage.getItem('ViewsID')
@@ -35,13 +58,13 @@ function Profile() {
     const { data } = await api.get(`/get/coments/${id}`)
 
     console.log(`Data: ${data}`)
-    setComments(data)
+    setComentarios(data)
   }
 
   useEffect(() => {
-    getComments()
     getOneProducts()
-  })
+    getComments()
+  }, [productsList])
 
   return (
     <Container>
@@ -142,7 +165,7 @@ function Profile() {
           <br />
           <br />
           <div style={{ marginLeft: '-70px', width: '410px' }}>
-            {comments.map((item) => {
+            {comentarios.map((item) => {
               return (
                 <div
                   style={{
@@ -189,6 +212,25 @@ function Profile() {
             })}
           </div>
         </UlLista>
+        <form onSubmit={handleComents}>
+          <label>Autor:</label>
+          <input
+            type="text"
+            name="autor"
+            value={user_name}
+            onChange={(e) => setUser_name(e.target.value)}
+          />
+
+          <label>Comentario:</label>
+          <input
+            type="text"
+            name="comentario"
+            value={comments}
+            onChange={(e) => setComments(e.target.value)}
+          />
+
+          <button type="submit"> Enviar</button>
+        </form>
       </div>
     </Container>
   )
