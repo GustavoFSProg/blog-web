@@ -51,7 +51,7 @@ function RegisterPosts() {
         <DivListagemProdutos>
           <ProductContainer>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <h1>Cadastrar</h1>
+              <h1>Cadastrar Post</h1>
             </div>
             <br />
             <form onSubmit={handleSubmit}>

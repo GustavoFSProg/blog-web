@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import api from './services/api'
-import { useHistory } from 'react-router-dom'
 import Header from './Header'
 import {
   Container,
@@ -12,26 +11,24 @@ import {
   Button,
 } from './styles'
 
-function Login() {
+function RegisterUsers() {
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
-  const history = useHistory()
+  const [role, setRole] = useState('')
 
   async function handleSubmit(event) {
     event.preventDefault()
 
     try {
-      console.log({ email, password })
-      const { token } = await api.post('/login', { email, password })
+      const data = { name, email, password, role }
 
-      console.log(token)
+      await api.post('/user-register', data)
 
-      history.push('/dashboard')
-
-      return alert('Login  realizado com sucesso!')
+      return alert('Cadastro realizado com sucesso!')
     } catch (error) {
-      return alert(`Deu erro no front do no Login ${error}`)
+      console.log(error)
+      return alert(`Deu erro no front ${error}`)
     }
   }
 
@@ -42,28 +39,36 @@ function Login() {
         <DivListagemProdutos>
           <ProductContainer>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <h1>Logar</h1>
+              <h1>Cadastrar Usuários</h1>
             </div>
             <br />
             <form onSubmit={handleSubmit}>
               <FormContainer>
+                <Label>Nome: </Label>
+                <Input id="name" value={name} onChange={(e) => setName(e.target.value)} />
                 <Label>Email: </Label>
                 <Input
-                  id="email"
                   type="email"
+                  id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <Label>Senha: </Label>
                 <Input
-                  id="password"
+                  rows="22"
+                  cols="52"
                   type="password"
+                  id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <br />
+
+                <Label>Cargo: </Label>
+                <Input id="role" value={role} onChange={(e) => setRole(e.target.value)} />
 
                 <Button className="confirm-Button" type="submit">
-                  Login
+                  Cadastrar
                 </Button>
               </FormContainer>
             </form>
@@ -74,4 +79,4 @@ function Login() {
   )
 }
 
-export default Login
+export default RegisterUsers
