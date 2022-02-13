@@ -1,8 +1,16 @@
 import { Container, UlLista } from './styled-app'
 import Header from './Header'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { Button } from './styles'
 
 function Dashboard() {
+  const history = useHistory()
+
+  function Logout() {
+    localStorage.clear()
+
+    history.push('/')
+  }
   return (
     <Container>
       <Header />
@@ -49,6 +57,9 @@ function Dashboard() {
           >
             Cadastrar Usuários
           </Link>
+          <Button style={{ width: '280px' }} onClick={Logout}>
+            Logout
+          </Button>
         </UlLista>
       </div>
     </Container>

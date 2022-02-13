@@ -12,6 +12,8 @@ import {
   Button,
 } from './styles'
 
+const token = localStorage.getItem('Token')
+
 function RegisterPosts() {
   const [title, setTitle] = useState('')
   const [likes] = useState(0)
@@ -27,6 +29,11 @@ function RegisterPosts() {
     try {
       const data = new FormData()
 
+      // headers: ({
+      //   'Content-Type': 'multipart/form-data',
+      //   Accept: 'pmultipart/form-data',
+      //   token: `${token}`,
+      // },
       data.append('title', title)
       data.append('text', text)
       data.append('autor', autor)
@@ -35,7 +42,18 @@ function RegisterPosts() {
       data.append('views', views)
       data.append('image', image)
 
-      await api.post('/register', data)
+      //  { 'Content-Type': 'application/json' }
+
+      // let headers = {
+      //   Accept: 'application/json',
+      //   'Content-Type': 'application/x-www-form-urlencoded',
+      //   Authorization: `token ${token}`,
+      // }
+      // if (token) {
+      //   headers['Authorization'] = `token ${token}`
+      // }
+
+      await api.post(`/register`, data)
 
       return alert('Cadastro realizado com sucesso!')
     } catch (error) {
@@ -82,10 +100,13 @@ function RegisterPosts() {
 
                 <Label>Autor: </Label>
                 <Input id="autor" value={autor} onChange={(e) => setAutor(e.target.value)} />
-
-                <Button className="confirm-Button" type="submit">
-                  Cadastrar
-                </Button>
+                {token ? (
+                  <Button className="confirm-Button" type="submit">
+                    Cadastrar
+                  </Button>
+                ) : (
+                  <span>Unautorized!!!</span>
+                )}
               </FormContainer>
             </form>
           </ProductContainer>

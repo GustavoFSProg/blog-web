@@ -16,6 +16,19 @@ function Header() {
       >
         Home
       </Link>
+
+      <Link
+        to="/dashboard"
+        style={{
+          marginRight: '20px',
+          marginLeft: '50px',
+          textDecoration: 'none',
+          color: 'darkblue',
+          fontSize: '18px',
+        }}
+      >
+        Dashboard
+      </Link>
       <Link
         to="/profile"
         style={{

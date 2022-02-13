@@ -20,8 +20,10 @@ function RegisterUsers() {
   async function handleSubmit(event) {
     event.preventDefault()
 
+    const token = localStorage.getItem('Token')
+
     try {
-      const data = { name, email, password, role }
+      const data = { name, email, password, role, token }
 
       await api.post('/user-register', data)
 

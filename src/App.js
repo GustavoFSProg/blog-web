@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import Header from './Header'
 
 function App() {
+  // localStorage.clear()
+
   const [post, setPosts] = useState([])
 
   function getDateWithoutTime(date) {

@@ -13,8 +13,8 @@ import {
 } from './styles'
 
 function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('barbara@gmail.com')
+  const [password, setPassword] = useState('pepecao1234')
 
   const history = useHistory()
 
@@ -23,9 +23,11 @@ function Login() {
 
     try {
       console.log({ email, password })
-      const { token } = await api.post('/login', { email, password })
+      const { data } = await api.post('/login', { email, password })
 
-      console.log(token)
+      console.log(data.token)
+
+      localStorage.setItem('Token', data.token)
 
       history.push('/dashboard')
 
