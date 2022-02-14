@@ -17,10 +17,10 @@ function RegisterUsers() {
   const [password, setPassword] = useState('')
   const [role, setRole] = useState('')
 
+  const token = localStorage.getItem('Token')
+
   async function handleSubmit(event) {
     event.preventDefault()
-
-    const token = localStorage.getItem('Token')
 
     try {
       const data = { name, email, password, role, token }
@@ -68,10 +68,13 @@ function RegisterUsers() {
 
                 <Label>Cargo: </Label>
                 <Input id="role" value={role} onChange={(e) => setRole(e.target.value)} />
-
-                <Button className="confirm-Button" type="submit">
-                  Cadastrar
-                </Button>
+                {token ? (
+                  <Button className="confirm-Button" type="submit">
+                    Cadastrar
+                  </Button>
+                ) : (
+                  <span>Unautorized!!!</span>
+                )}
               </FormContainer>
             </form>
           </ProductContainer>

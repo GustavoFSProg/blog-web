@@ -9,7 +9,7 @@ function Dashboard() {
   function Logout() {
     localStorage.clear()
 
-    history.push('/')
+    history.push('/login')
   }
   return (
     <Container>
