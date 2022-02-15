@@ -10,6 +10,8 @@ function Profile() {
   const [user_name, setUser_name] = useState('')
   const [comments, setComments] = useState('')
 
+  const token = localStorage.getItem('Token')
+
   const history = useHistory()
 
   function setItemId(id) {
@@ -18,6 +20,22 @@ function Profile() {
 
   function getDateWithoutTime(date) {
     return require('moment')(date).format('DD-MM-YYYY')
+  }
+
+  async function deletePost() {
+    try {
+      if (!token) {
+        alert('Token inválido! Login to Enter!')
+      } else {
+        const id = localStorage.getItem('ViewsID')
+
+        await api.delete(`/del/${id}`)
+
+        return alert('Post Apagado!!')
+      }
+    } catch (error) {
+      return alert('ERRO ao Deletar!!')
+    }
   }
 
   async function handleComents(e) {
@@ -289,6 +307,29 @@ function Profile() {
               onClick={() => setItemId(productsList.id)}
             >
               Editar o Post
+            </Link>
+
+            <Link
+              style={{
+                width: '160px',
+                height: '50px',
+                background: 'lightgreen',
+                borderRadius: '25',
+                textAlign: 'center',
+
+                fontFamily: 'Arial',
+                fontSize: '18px',
+                textDecoration: 'none',
+                color: 'blueviolet',
+                marginBottom: '22px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              to="/update-post"
+              onClick={() => deletePost()}
+            >
+              Deletar o Post
             </Link>
             <br />
             <br />
