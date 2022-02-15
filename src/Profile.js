@@ -31,6 +31,8 @@ function Profile() {
 
         await api.delete(`/del/${id}`)
 
+        history.push('/dashboard')
+
         return alert('Post Apagado!!')
       }
     } catch (error) {

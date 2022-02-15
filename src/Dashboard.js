@@ -58,6 +58,19 @@ function Dashboard() {
           >
             Cadastrar Usuários
           </Link>
+
+          <Link
+            style={{
+              fontFamily: 'Arial',
+              fontSize: '25px',
+              textDecoration: 'none',
+              color: 'blueviolet',
+              marginBottom: '22px',
+            }}
+            to="/profile"
+          >
+            Profile
+          </Link>
           <Button style={{ width: '280px' }} onClick={Logout}>
             Logout
           </Button>
