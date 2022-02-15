@@ -267,21 +267,33 @@ function Profile() {
             </button>
             <br />
             <br />
+
+            <Link
+              style={{
+                width: '160px',
+                height: '50px',
+                background: 'lightgreen',
+                borderRadius: '25',
+                textAlign: 'center',
+
+                fontFamily: 'Arial',
+                fontSize: '18px',
+                textDecoration: 'none',
+                color: 'blueviolet',
+                marginBottom: '22px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              to="/update-post"
+              onClick={() => setItemId(productsList.id)}
+            >
+              Editar o Post
+            </Link>
+            <br />
+            <br />
             <br />
           </form>
-          <Link
-            style={{
-              fontFamily: 'Arial',
-              fontSize: '25px',
-              textDecoration: 'none',
-              color: 'blueviolet',
-              marginBottom: '22px',
-            }}
-            to="/update-post"
-            onClick={() => setItemId(productsList.id)}
-          >
-            Editar Posts
-          </Link>
         </div>
       </div>
     </Container>
