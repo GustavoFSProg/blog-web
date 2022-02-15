@@ -39,10 +39,6 @@ function UpdatePost() {
     return data
   }
 
-  function setItemID(id) {
-    localStorage.setItem('ViewsID', id)
-  }
-
   async function handleSubmit(event) {
     event.preventDefault()
 
