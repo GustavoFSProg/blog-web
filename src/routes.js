@@ -5,6 +5,7 @@ import Login from './Login'
 import Profile from './Profile'
 import RegisterPosts from './RegisterPosts'
 import RegisterUsers from './RegisterUsers'
+import UpdatePost from './UpdatePost'
 
 function Routes() {
   return (
@@ -16,6 +17,7 @@ function Routes() {
         <Route path="/login" component={Login} />
         <Route path="/register-user" component={RegisterUsers} />
         <Route path="/dashboard" component={Dashboard} />
+        <Route path="/update-post" component={UpdatePost} />
       </Switch>
     </BrowserRouter>
   )

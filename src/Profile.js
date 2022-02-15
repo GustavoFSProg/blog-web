@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Container, Button, UlLista } from './styled-app'
 import api from './services/api'
 import Header from './Header'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 function Profile() {
   const [productsList, setProductsList] = useState([])
@@ -11,6 +11,10 @@ function Profile() {
   const [comments, setComments] = useState('')
 
   const history = useHistory()
+
+  function setItemId(id) {
+    localStorage.setItem('ViewsID', id)
+  }
 
   function getDateWithoutTime(date) {
     return require('moment')(date).format('DD-MM-YYYY')
@@ -198,14 +202,14 @@ function Profile() {
                       alt="imagem"
                     />
                     <li style={{ marginLeft: '20px', marginTop: '5px', width: '120px' }}>
-                      <strong>{item.user_name}</strong>
+                      <strong>{productsList.user_name}</strong>
                     </li>
                     <br />
                     <br />
 
                     <li style={{ marginTop: '5px', marginLeft: '-40px', width: '520px' }}>
                       <br />
-                      {item.comments}
+                      {productsList.comments}
                     </li>
                   </ul>
                 </div>
@@ -265,6 +269,19 @@ function Profile() {
             <br />
             <br />
           </form>
+          <Link
+            style={{
+              fontFamily: 'Arial',
+              fontSize: '25px',
+              textDecoration: 'none',
+              color: 'blueviolet',
+              marginBottom: '22px',
+            }}
+            to="/update-post"
+            onClick={() => setItemId(productsList.id)}
+          >
+            Editar Posts
+          </Link>
         </div>
       </div>
     </Container>
