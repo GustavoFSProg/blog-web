@@ -105,8 +105,10 @@ function RegisterPosts() {
                     Cadastrar
                   </Button>
                 ) : (
-                  <span>Unautorized!!!</span>
+                  <h2>Unautorized!!!</h2>
                 )}
+                <br />
+                <br />
               </FormContainer>
             </form>
           </ProductContainer>

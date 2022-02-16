@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom'
 import Header from './Header'
 
 function App() {
-  // localStorage.clear()
-
   const [post, setPosts] = useState([])
 
   function getDateWithoutTime(date) {
@@ -62,7 +60,7 @@ function App() {
               </li>
               <br />
               <Link onClick={() => handleViews(item.id)} to="/profile">
-                <img width="450" src={item.image} alt="imagem" />
+                <img width="450" style={{ cursor: 'pointer' }} src={item.image} alt="imagem" />
               </Link>
               <br />
 

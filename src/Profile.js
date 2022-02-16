@@ -222,14 +222,14 @@ function Profile() {
                       alt="imagem"
                     />
                     <li style={{ marginLeft: '20px', marginTop: '5px', width: '120px' }}>
-                      <strong>{productsList.user_name}</strong>
+                      <strong>{item.user_name}</strong>
                     </li>
                     <br />
                     <br />
 
                     <li style={{ marginTop: '5px', marginLeft: '-40px', width: '520px' }}>
                       <br />
-                      {productsList.comments}
+                      {item.comments}
                     </li>
                   </ul>
                 </div>

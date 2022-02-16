@@ -73,7 +73,7 @@ function RegisterUsers() {
                     Cadastrar
                   </Button>
                 ) : (
-                  <span>Unautorized!!!</span>
+                  <h2>Unautorized!!!</h2>
                 )}
               </FormContainer>
             </form>
