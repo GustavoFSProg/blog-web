@@ -287,52 +287,80 @@ function Profile() {
             </button>
             <br />
             <br />
+            {token ? (
+              <Link
+                style={{
+                  width: '160px',
+                  height: '50px',
+                  background: 'lightgreen',
+                  borderRadius: '25',
+                  textAlign: 'center',
 
-            <Link
-              style={{
-                width: '160px',
-                height: '50px',
-                background: 'lightgreen',
-                borderRadius: '25',
-                textAlign: 'center',
+                  fontFamily: 'Arial',
+                  fontSize: '18px',
+                  textDecoration: 'none',
+                  color: 'blueviolet',
+                  marginBottom: '22px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                to="/update-post"
+                onClick={() => setItemId(productsList.id)}
+              >
+                Editar o Post
+              </Link>
+            ) : (
+              <h2 style={{ color: 'darkblue' }}>Blocked, please login to enter</h2>
+            )}
+            <br />
+            <br />
+            {token ? (
+              <Link
+                style={{
+                  width: '160px',
+                  height: '50px',
+                  background: 'lightgreen',
+                  borderRadius: '25',
+                  textAlign: 'center',
 
-                fontFamily: 'Arial',
-                fontSize: '18px',
-                textDecoration: 'none',
-                color: 'blueviolet',
-                marginBottom: '22px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-              to="/update-post"
-              onClick={() => setItemId(productsList.id)}
-            >
-              Editar o Post
-            </Link>
+                  fontFamily: 'Arial',
+                  fontSize: '18px',
+                  textDecoration: 'none',
+                  color: 'blueviolet',
+                  marginBottom: '22px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                to="/update-post"
+                onClick={() => deletePost()}
+              >
+                Deletar o Post
+              </Link>
+            ) : (
+              <Link
+                style={{
+                  width: '160px',
+                  height: '50px',
+                  background: 'lightgreen',
+                  borderRadius: '25',
+                  textAlign: 'center',
 
-            <Link
-              style={{
-                width: '160px',
-                height: '50px',
-                background: 'lightgreen',
-                borderRadius: '25',
-                textAlign: 'center',
-
-                fontFamily: 'Arial',
-                fontSize: '18px',
-                textDecoration: 'none',
-                color: 'blueviolet',
-                marginBottom: '22px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-              to="/update-post"
-              onClick={() => deletePost()}
-            >
-              Deletar o Post
-            </Link>
+                  fontFamily: 'Arial',
+                  fontSize: '18px',
+                  textDecoration: 'none',
+                  color: 'blueviolet',
+                  marginBottom: '22px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                to="/login"
+              >
+                Login
+              </Link>
+            )}
             <br />
             <br />
             <br />
