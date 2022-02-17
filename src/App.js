@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Container, Button, UlLista } from './styled-app'
 import api from './services/api'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Header from './Header'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   }
 
   async function handlePosts() {
-    const { data } = await api.get(`/pegar`)
+    const { data } = await api.get(`/dois/${4}`)
 
     setPosts(data)
   }
