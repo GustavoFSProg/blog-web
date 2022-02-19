@@ -82,9 +82,9 @@ function MobileApp() {
                 {item.autor}
               </li>
               <br />
-              <li style={{ marginLeft: '40px', listStyle: 'none' }}>
+              <li style={{ marginLeft: '30px', listStyle: 'none' }}>
                 <Link onClick={() => handleViews(item.id)} to="/profile">
-                  <img width="250" style={{ cursor: 'pointer' }} src={item.image} alt="imagem" />
+                  <img width="265" style={{ cursor: 'pointer' }} src={item.image} alt="imagem" />
                 </Link>
               </li>
               <br />
