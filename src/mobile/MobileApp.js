@@ -44,29 +44,52 @@ function MobileApp() {
 
       {post.map((item) => {
         return (
-          <div>
+          <div style={{ width: '80%' }}>
             <UlLista key={item.id}>
               <br />
               <br />
               <br />
-              <li style={{ listStyle: 'none' }}>
-                <h1 style={{ color: '#000099' }}>{item.title}</h1>
+              <li
+                style={{
+                  width: '350px',
+                  height: 'auto',
+                  listStyle: 'none',
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <h1
+                  style={{
+                    fontSize: '26px',
+
+                    color: '#000099',
+                  }}
+                >
+                  {item.title}
+                </h1>
               </li>
               <br />
 
-              <li style={{ listStyle: 'none', color: 'darkblue' }}>
-                <div style={{ marginLeft: '-280px' }}>
-                  <strong style={{ marginRight: '10px' }}>Autor:</strong>
-                  {item.autor}
-                </div>
+              <li
+                style={{
+                  marginLeft: '-70px',
+                  fontSize: '18px',
+                  listStyle: 'none',
+                  color: 'darkblue',
+                }}
+              >
+                <strong style={{ marginRight: '10px' }}>Autor:</strong>
+                {item.autor}
               </li>
               <br />
-              <Link onClick={() => handleViews(item.id)} to="/profile">
-                <img width="450" style={{ cursor: 'pointer' }} src={item.image} alt="imagem" />
-              </Link>
+              <li style={{ marginLeft: '90px' }}>
+                <Link onClick={() => handleViews(item.id)} to="/profile">
+                  <img width="320" style={{ cursor: 'pointer' }} src={item.image} alt="imagem" />
+                </Link>
+              </li>
               <br />
 
-              <li style={{ width: '50%', listStyle: 'none' }}>
+              <li style={{ width: '130%', height: 'auto', marginLeft: '10px', listStyle: 'none' }}>
                 {' '}
                 <Link
                   style={{
@@ -79,7 +102,7 @@ function MobileApp() {
                   onClick={() => handleViews(item.id)}
                   to="/profile"
                 >
-                  <p style={{ textIndent: '30px' }}>Descricao: {item.description} </p>
+                  <p style={{ textIndent: '5px' }}>Descricao: {item.description} </p>
                 </Link>
               </li>
 
@@ -93,7 +116,7 @@ function MobileApp() {
                   fontSize: '15px',
                   color: '#000080',
                   listStyle: 'none',
-                  marginLeft: '-470px',
+                  marginLeft: '-140px',
                 }}
               >
                 Likes: {item.likes}
@@ -113,7 +136,7 @@ function MobileApp() {
                   fontSize: '15px',
                   color: '#000080',
                   listStyle: 'none',
-                  marginLeft: '-470px',
+                  marginLeft: '-140px',
                 }}
               >
                 Views: {item.views}
@@ -124,10 +147,12 @@ function MobileApp() {
                   fontFamily: 'Roboto',
                   fontWeight: 'none',
                   textDecoration: 'none',
-                  fontSize: '15px',
+                  fontSize: '14px',
                   color: '#000080',
                   listStyle: 'none',
-                  marginLeft: '280px',
+                  marginLeft: '190px',
+                  width: '200px',
+                  marginTop: '50px',
                 }}
               >
                 Data: {getDateWithoutTime(item.createdAt)}
