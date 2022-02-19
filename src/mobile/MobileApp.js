@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Container, Button, UlLista } from './styled-app'
-import api from './services/api'
-import { Link } from 'react-router-dom'
-import Header from './Header'
+import { Container, Button, UlLista } from './mobile-styled-app'
+import api from '../services/api'
 
-function AppContainer() {
+import { Link } from 'react-router-dom'
+import MobileHeader from './MobileHeader'
+
+function MobileApp() {
   const [post, setPosts] = useState([])
 
   function getDateWithoutTime(date) {
@@ -35,9 +36,10 @@ function AppContainer() {
 
   return (
     <Container>
-      <Header />
+      <MobileHeader />
+
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <h1>Home</h1>
+        <h1>Mobile App</h1>
       </div>
 
       {post.map((item) => {
@@ -139,4 +141,4 @@ function AppContainer() {
   )
 }
 
-export default AppContainer
+export default MobileApp
