@@ -17,7 +17,7 @@ import MobileUpdatePost from './mobile/MobileUpdatePost'
 import MobileLogin from './mobile/MobileLogin'
 
 function Routes() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [windowWidth] = useState(window.innerWidth)
   const isMobileScreen = useMemo(() => windowWidth <= 600, [windowWidth])
 
   return (
