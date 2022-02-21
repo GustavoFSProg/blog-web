@@ -1,5 +1,5 @@
 import React from 'react'
-import SimpleMenu from '../components/Menu'
+import SimpleMenu from '../../src/components/Menu'
 
 function MobileHeader() {
   return (
