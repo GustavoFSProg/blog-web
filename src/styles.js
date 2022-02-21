@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   width: 100%;
   height: 888px;
-  background: #e6f3ff;
+  background: #f2f2f2;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -31,6 +31,7 @@ export const ProductContainer = styled.div`
   background: #cce6ff;
   margin-left: 20px;
   border-radius: 15px;
+  width: 500px;
 
   @media screen and (max-width: 700px) {
     margin-top: 20px;
@@ -54,7 +55,7 @@ export const FormContainer = styled.div`
   padding-right: 20px;
 `
 export const Label = styled.label`
-  margin-left: -190px;
+  margin-left: -350px;
   font-family: 'Roboto';
   font-size: 15px;
   color: #0069cc;
@@ -70,8 +71,8 @@ export const InputFile = styled.input`
   margin-top: 20px;
 `
 export const Button = styled.button`
-  width: 50%;
-  height: 30px;
+  width: 90%;
+  height: 40px;
   cursor: pointer;
   background: #b3daff;
   border: 1px solid #80c1ff;

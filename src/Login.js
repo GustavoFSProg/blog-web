@@ -43,7 +43,15 @@ function Login() {
       <Container>
         <DivListagemProdutos>
           <ProductContainer>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div
+              style={{
+                color: '#0059b3',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontFamily: 'Roboto',
+              }}
+            >
               <h1>Login</h1>
             </div>
             <br />
@@ -63,11 +71,13 @@ function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-
+                <br />
                 <Button className="confirm-Button" type="submit">
                   Login
                 </Button>
               </FormContainer>
+              <br />
+              <br />
             </form>
           </ProductContainer>
         </DivListagemProdutos>

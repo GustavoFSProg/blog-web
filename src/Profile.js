@@ -95,7 +95,16 @@ function Profile() {
     <Container>
       <Header />
 
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div
+        style={{
+          color: '#0059b3',
+          fontFamily: 'Roboto',
+
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         <h1>Profile</h1>
       </div>
 

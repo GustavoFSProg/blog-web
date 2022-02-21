@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
+  margin-top: -8px;
+  background: #f2f2f2;
 `
 export const UlLista = styled.ul`
   display: flex;

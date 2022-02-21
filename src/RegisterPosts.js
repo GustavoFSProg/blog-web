@@ -68,7 +68,15 @@ function RegisterPosts() {
       <Container>
         <DivListagemProdutos>
           <ProductContainer>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div
+              style={{
+                color: '#0059b3',
+                fontFamily: 'Roboto',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
               <h1>Cadastrar Post</h1>
             </div>
             <br />
