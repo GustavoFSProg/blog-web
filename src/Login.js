@@ -45,10 +45,10 @@ function Login() {
           <ProductContainer>
             <div
               style={{
-                color: '#0059b3',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                color: '#0059b3',
                 fontFamily: 'Roboto',
               }}
             >
